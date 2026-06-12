@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>WA Chat Pinner | Pin Unlimited Chats on WhatsApp Web</title>
+    <meta name="title" content="WA Chat Pinner | Pin Unlimited Chats on WhatsApp Web">
+    <meta name="description" content="Bypass the 3-pin limit. WA Chat Pinner is a free, easy-to-install Chrome extension that allows you to pin unlimited conversations on WhatsApp Web.">
+    <meta name="keywords" content="WhatsApp Web, pin chats, unlimited pins, WhatsApp Chrome extension, productivity, chat organizer">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        wa: {
+                            DEFAULT: '#25D366',
+                            hover: '#22bf5b',
+                            light: '#E1F8E8', // Soft WA green for backgrounds
+                            text: '#0E5026'   // Dark green for high contrast text
+                        },
+                        surface: {
+                            DEFAULT: '#FAFAFA',
+                            card: '#FFFFFF',
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(0,0,0,0.05)',
+                        'glow': '0 10px 40px -10px rgba(37,211,102,0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "WA Chat Pinner",
+      "operatingSystem": "Chrome OS, Windows, macOS, Linux",
+      "applicationCategory": "BrowserApplication",
+      "browserRequirements": "Requires Google Chrome",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "A lightweight Google Chrome extension that allows users to pin an unlimited number of chats on WhatsApp Web in 1-click.",
+      "url": "https://chromewebstore.google.com/detail/gafeednglggnikkcpicbkapaokipebak"
+    }
+    </script>
+
+    <style>
+        /* Soft Dot Pattern Background */
+        .bg-dots {
+            background-color: #FAFAFA;
+            background-image: radial-gradient(#E5E7EB 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-dots text-slate-800 font-sans antialiased overflow-x-hidden selection:bg-wa selection:text-white min-h-screen flex flex-col">
+
+    <div class="fixed top-[-20%] left-[-10%] w-[70vw] h-[70vw] rounded-full bg-wa/5 blur-[120px] pointer-events-none -z-10"></div>
+    <div class="fixed bottom-[-20%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-emerald-100/40 blur-[100px] pointer-events-none -z-10"></div>
+
+    <header class="fixed top-0 w-full bg-white/70 backdrop-blur-xl border-b border-slate-200/50 z-40 transition-all">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex justify-between items-center">
+            <div class="flex items-center gap-2 group cursor-pointer">
+                <div class="w-8 h-8 rounded-xl bg-wa-light flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <svg class="w-4 h-4 text-wa-text" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"></path></svg>
+                </div>
+                <span class="font-bold text-slate-900 tracking-tight">WA Chat Pinner</span>
+            </div>
+            <nav class="hidden sm:flex items-center gap-8">
+                <a href="#features" class="text-sm font-semibold text-slate-500 hover:text-slate-900 transition-colors">Features</a>
+                <a href="/privacy-policy" class="text-sm font-semibold text-slate-500 hover:text-slate-900 transition-colors">Privacy</a>
+                <a href="https://chromewebstore.google.com/detail/gafeednglggnikkcpicbkapaokipebak" target="_blank" class="text-sm font-bold px-5 py-2.5 rounded-full bg-slate-900 text-white hover:bg-slate-800 transition-colors shadow-md">
+                    Get Extension
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow relative z-10 pt-32 pb-20">
+        
+        <section class="max-w-5xl mx-auto px-6 text-center mt-12 mb-24">
+            
+            <a href="https://chromewebstore.google.com/detail/gafeednglggnikkcpicbkapaokipebak" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-bold text-slate-600 mb-8 hover:bg-slate-50 transition-colors">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24ZM12 9.5C13.3807 9.5 14.5 10.6193 14.5 12C14.5 13.3807 13.3807 14.5 12 14.5C10.6193 14.5 9.5 13.3807 9.5 12C9.5 10.6193 10.6193 9.5 12 9.5Z" fill="#4285F4"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20.658 6.5H12C9.72265 6.5 7.7681 7.8837 6.84074 9.80004L2.51174 2.29828C5.03157 0.844391 7.94042 0 11.0001 0C16.2081 0 20.6133 3.61435 22.0623 8.54448L20.658 6.5Z" fill="#EA4335"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.8408 14.1999L6.51172 21.7017C3.01168 19.349 0.722656 15.3475 0.722656 10.8445L0.722656 12C0.722656 10.8445 0.985955 9.74314 1.45934 8.74205L5.78839 16.2438C6.71576 18.1602 8.6703 19.5439 10.9477 19.5439L19.6058 19.5439C17.5255 22.2599 14.4124 24 10.9477 24C9.56633 24 8.24364 23.7505 7.02236 23.3002L10.8408 14.1999Z" fill="#34A853"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M23.2774 12C23.2774 13.1555 23.0141 14.2568 22.5407 15.2579L18.2117 7.75621C17.2843 5.83984 15.3298 4.45612 13.0524 4.45612L4.39423 4.45612C6.47453 1.7401 9.58763 0 13.0524 0C14.4338 0 15.7565 0.249481 16.9777 0.699778L13.1593 9.80004L17.4883 2.29828C20.9884 4.65101 23.2774 8.65251 23.2774 13.1555L23.2774 12Z" fill="#FBBC05"/>
+                </svg>
+                Available in the Chrome Web Store
+            </a>
+            
+            <h1 class="text-6xl md:text-7xl font-extrabold text-slate-900 leading-[1.1] tracking-tight mb-8">
+                Organize your chats. <br>
+                <span class="text-wa">Without the limits.</span>
+            </h1>
+            
+            <p class="text-xl text-slate-500 mb-10 leading-relaxed max-w-2xl mx-auto font-medium">
+                Instantly bypass WhatsApp's 3-pin rule. Keep all your important clients, groups, and friends exactly where you need them—pinned to the top.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="https://chromewebstore.google.com/detail/gafeednglggnikkcpicbkapaokipebak" target="_blank" class="flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-wa text-white font-bold text-lg hover:bg-wa-hover transition-all duration-300 shadow-glow hover:shadow-[0_15px_40px_-10px_rgba(37,211,102,0.6)] transform hover:-translate-y-0.5">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                         <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.757 6.162 6.162 6.162 3.405 0 6.162-2.757 6.162-6.162 0-3.405-2.757-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.441 1.44-.795 0-1.439-.645-1.439-1.44 0-.795.644-1.439 1.439-1.439.796 0 1.441.644 1.441 1.439z"/>
+                    </svg>
+                    Add to Chrome — It's Free
+                </a>
+                <p class="text-sm font-semibold text-slate-400 sm:ml-4">Takes 2 seconds to install.</p>
+            </div>
+        </section>
+
+        <section id="features" class="max-w-6xl mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="bg-white rounded-3xl p-8 shadow-soft border border-slate-100 flex flex-col items-start transition-transform hover:-translate-y-1 duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-wa-light text-wa-text flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Unlimited Pins</h3>
+                    <p class="text-slate-500 leading-relaxed">Pin 10, 20, or 50 chats. Take complete control over your sidebar hierarchy without having to unpin old conversations.</p>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 shadow-soft border border-slate-100 flex flex-col items-start transition-transform hover:-translate-y-1 duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Privacy First</h3>
+                    <p class="text-slate-500 leading-relaxed">We don't want your data. The extension runs entirely in your local browser storage. No servers, no tracking, ever.</p>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 shadow-soft border border-slate-100 flex flex-col items-start transition-transform hover:-translate-y-1 duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Native Integration</h3>
+                    <p class="text-slate-500 leading-relaxed">It blends right in. The pinned chats look and act exactly like WhatsApp’s native design. No clunky pop-ups.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200/60 py-10 mt-10">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <p class="text-slate-900 font-bold text-lg mb-1">WA Chat Pinner</p>
+                <p class="text-slate-500 text-sm">Not affiliated with or endorsed by Meta or WhatsApp Inc.</p>
+            </div>
+            <div class="flex gap-6">
+                <a href="/privacy-policy" class="text-sm font-semibold text-slate-500 hover:text-slate-900 transition-colors">Privacy Policy</a>
+                <a href="/terms-of-use" class="text-sm font-semibold text-slate-500 hover:text-slate-900 transition-colors">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
