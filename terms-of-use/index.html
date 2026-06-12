@@ -3,78 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Use - WA Chat Pinner</title>
+    
+    <title>Terms of Use | WA Chat Pinner</title>
+    <meta name="description" content="Plain-English Terms of Use for WA Chat Pinner. Understand how our extension works and your rights when using it.">
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
                     colors: {
-                        wa: { DEFAULT: '#25D366', hover: '#20bd5c' }
+                        wa: {
+                            DEFAULT: '#25D366',
+                            hover: '#22bf5b',
+                            light: '#E1F8E8',
+                            text: '#0E5026'
+                        },
+                        surface: {
+                            DEFAULT: '#FAFAFA',
+                            card: '#FFFFFF',
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(0,0,0,0.05)',
                     }
                 }
             }
         }
     </script>
-</head>
-<body class="bg-slate-950 text-slate-300 font-sans antialiased relative min-h-screen flex flex-col">
 
-    <header class="border-b border-white/10 bg-slate-950/50 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
-                <div class="bg-wa/10 p-2 rounded-lg border border-wa/20">
-                    <svg class="w-6 h-6 text-wa" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"></path></svg>
+    <style>
+        /* Soft Dot Pattern Background */
+        .bg-dots {
+            background-color: #FAFAFA;
+            background-image: radial-gradient(#E5E7EB 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-dots text-slate-800 font-sans antialiased overflow-x-hidden selection:bg-wa selection:text-white min-h-screen flex flex-col">
+
+    <!-- Ambient Glow Effects -->
+    <div class="fixed top-[-20%] left-[-10%] w-[70vw] h-[70vw] rounded-full bg-wa/5 blur-[120px] pointer-events-none -z-10"></div>
+
+    <!-- Navigation -->
+    <header class="fixed top-0 w-full bg-white/70 backdrop-blur-xl border-b border-slate-200/50 z-40 transition-all">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-2 group cursor-pointer">
+                <div class="w-8 h-8 rounded-xl bg-wa-light flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <svg class="w-4 h-4 text-wa-text" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"></path></svg>
                 </div>
-                <span class="text-xl font-bold text-white tracking-tight">WA Chat Pinner</span>
+                <span class="font-bold text-slate-900 tracking-tight">WA Chat Pinner</span>
             </a>
-            <nav class="hidden md:flex gap-8">
-                <a href="index.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Home</a>
-                <a href="privacy-policy.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Privacy</a>
-                <a href="terms-of-use.html" class="text-sm font-medium text-wa transition-colors">Terms</a>
+            <nav class="hidden sm:flex items-center gap-8">
+                <a href="/#features" class="text-sm font-semibold text-slate-500 hover:text-slate-900 transition-colors">Features</a>
+                <a href="/privacy-policy" class="text-sm font-semibold text-slate-500 hover:text-slate-900 transition-colors">Privacy</a>
+                <a href="/terms-of-use" class="text-sm font-bold text-slate-900 transition-colors border-b-2 border-wa pb-1">Terms</a>
+                <a href="https://chromewebstore.google.com/detail/gafeednglggnikkcpicbkapaokipebak" target="_blank" class="text-sm font-bold px-5 py-2.5 rounded-full bg-slate-900 text-white hover:bg-slate-800 transition-colors shadow-md">
+                    Get Extension
+                </a>
             </nav>
         </div>
     </header>
 
-    <main class="flex-grow pt-16 pb-24">
+    <main class="flex-grow relative z-10 pt-32 pb-20">
+        
         <div class="max-w-3xl mx-auto px-6">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">Terms of Use</h1>
-            <p class="text-sm text-wa mb-12 font-medium">Last Updated: June 2026</p>
+            
+            <div class="mb-12 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-bold mb-6 border border-blue-100">
+                    <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                    Plain English Terms
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">Terms of Use</h1>
+                <p class="text-lg text-slate-500 font-medium">Last Updated: June 2026</p>
+            </div>
 
-            <div class="space-y-8 text-slate-400 leading-relaxed bg-white/5 border border-white/10 p-8 md:p-10 rounded-3xl backdrop-blur-sm">
+            <!-- Main Content Card -->
+            <div class="bg-white rounded-[2rem] p-8 md:p-12 shadow-soft border border-slate-100/80">
                 
-                <section>
-                    <h2 class="text-2xl font-bold text-white mb-4">1. Acceptance of Terms</h2>
-                    <p>By downloading, installing, or using the WA Chat Pinner Chrome extension, you agree to comply with and be bound by these Terms of Use. If you do not agree to these terms, please do not use the extension.</p>
-                </section>
+                <!-- TL;DR Section -->
+                <div class="mb-12 bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                    <h2 class="text-xl font-bold text-slate-900 mb-2">The Short Version</h2>
+                    <p class="text-slate-600 leading-relaxed font-medium">
+                        This is a free tool provided "as is". We don't work for WhatsApp, and if WhatsApp updates their website, the extension might temporarily break. We aren't responsible for any lost pins or business disruptions.
+                    </p>
+                </div>
 
-                <section>
-                    <h2 class="text-2xl font-bold text-white mb-4">2. License to Use</h2>
-                    <p>We grant you a personal, non-exclusive, non-transferable, and revocable license to use WA Chat Pinner for personal or commercial purposes, strictly in accordance with these Terms.</p>
-                </section>
+                <!-- Real World Scenarios (Use Cases) -->
+                <h2 class="text-2xl font-bold text-slate-900 mb-6">How Our Terms Work in Real Scenarios</h2>
+                
+                <div class="space-y-6 mb-12">
+                    
+                    <!-- Case 1 -->
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex-shrink-0 flex items-center justify-center mt-1">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-1">Scenario: WhatsApp updates its code and the extension breaks</h3>
+                            <p class="text-slate-600 leading-relaxed text-sm">
+                                Because our extension relies on reading the structure (DOM) of WhatsApp Web, if Meta decides to completely redesign their website tomorrow, our tool will likely stop working until we push an update. You agree that we are providing this tool on an "as-available" basis.
+                            </p>
+                        </div>
+                    </div>
 
-                <section>
-                    <h2 class="text-2xl font-bold text-white mb-4">3. Disclaimer of Affiliation</h2>
-                    <p><strong>WA Chat Pinner is an independent project.</strong> It is not affiliated with, authorized, maintained, sponsored, endorsed by, or in any way officially connected with WhatsApp Inc., Meta Platforms Inc., or any of their affiliates or subsidiaries. "WhatsApp" is a registered trademark of WhatsApp Inc.</p>
-                </section>
+                    <!-- Case 2 -->
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex-shrink-0 flex items-center justify-center mt-1">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-1">Scenario: You accidentally clear your browser cache</h3>
+                            <p class="text-slate-600 leading-relaxed text-sm">
+                                If you clear your browser cookies and local storage, you will lose your pinned chats setup. Since we don't store your data on our servers (see our Privacy Policy), we cannot recover your pins for you. We are not liable for any data loss.
+                            </p>
+                        </div>
+                    </div>
 
-                <section>
-                    <h2 class="text-2xl font-bold text-white mb-4">4. "As Is" Provision & Reliability</h2>
-                    <p>The extension is provided on an "as is" and "as available" basis without any warranties of any kind. Because the extension relies on the DOM structure of WhatsApp Web, functionality may be temporarily disrupted if WhatsApp updates its web interface. We are not responsible for any loss of pinned chat configurations due to such updates or browser cache clears.</p>
-                </section>
+                    <!-- Case 3 -->
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex-shrink-0 flex items-center justify-center mt-1">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-1">Scenario: You use this tool for your business</h3>
+                            <p class="text-slate-600 leading-relaxed text-sm">
+                                Many users use WA Chat Pinner to manage client conversations. If the extension glitches and you miss a message from an important client, we cannot be held legally or financially responsible for any lost business or damages.
+                            </p>
+                        </div>
+                    </div>
 
-                <section>
-                    <h2 class="text-2xl font-bold text-white mb-4">5. Limitation of Liability</h2>
-                    <p>In no event shall the developers of WA Chat Pinner be liable for any direct, indirect, incidental, consequential, or punitive damages arising out of your use of or inability to use the extension.</p>
-                </section>
+                </div>
+
+                <hr class="border-slate-100 my-8">
+
+                <!-- The Legal Details -->
+                <h2 class="text-2xl font-bold text-slate-900 mb-6">The Legal Details</h2>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">1. No Affiliation with Meta</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            <strong>WA Chat Pinner is an independent project.</strong> It is not affiliated with, authorized, maintained, sponsored, endorsed by, or in any way officially connected with WhatsApp Inc., Meta Platforms Inc., or any of their affiliates or subsidiaries. "WhatsApp" is a registered trademark of WhatsApp Inc.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">2. License to Use</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            We grant you a personal, worldwide, royalty-free, non-assignable, and non-exclusive license to use the software provided to you as part of the extension. This license is for the sole purpose of enabling you to use and enjoy the benefit of WA Chat Pinner. You may not copy, modify, distribute, sell, or lease any part of our extension, nor may you reverse engineer or attempt to extract the source code.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">3. Limitation of Liability</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            To the maximum extent permitted by law, WA Chat Pinner and its developers shall not be liable for any indirect, incidental, special, consequential or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from your access to or use of or inability to access or use the extension.
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </main>
 
-    <footer class="border-t border-white/10 py-8 text-center bg-slate-950">
-        <div class="max-w-7xl mx-auto px-6">
-            <p class="text-slate-500">&copy; 2026 WA Chat Pinner. All rights reserved.</p>
-            <p class="mt-2 text-xs text-slate-600">Not affiliated with Meta or WhatsApp Inc.</p>
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200/60 py-10 mt-10">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <p class="text-slate-900 font-bold text-lg mb-1">WA Chat Pinner</p>
+                <p class="text-slate-500 text-sm">Not affiliated with or endorsed by Meta or WhatsApp Inc.</p>
+            </div>
+            <div class="flex gap-6">
+                <a href="/privacy-policy" class="text-sm font-semibold text-slate-500 hover:text-slate-900 transition-colors">Privacy Policy</a>
+                <a href="/terms-of-use" class="text-sm font-bold text-slate-900 transition-colors">Terms of Use</a>
+            </div>
         </div>
     </footer>
+
 </body>
 </html>
