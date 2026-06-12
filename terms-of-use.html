@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use - WA Chat Pinner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        wa: { DEFAULT: '#25D366', hover: '#20bd5c' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-300 font-sans antialiased relative min-h-screen flex flex-col">
+
+    <header class="border-b border-white/10 bg-slate-950/50 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                <div class="bg-wa/10 p-2 rounded-lg border border-wa/20">
+                    <svg class="w-6 h-6 text-wa" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"></path></svg>
+                </div>
+                <span class="text-xl font-bold text-white tracking-tight">WA Chat Pinner</span>
+            </a>
+            <nav class="hidden md:flex gap-8">
+                <a href="index.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Home</a>
+                <a href="privacy-policy.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Privacy</a>
+                <a href="terms-of-use.html" class="text-sm font-medium text-wa transition-colors">Terms</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-16 pb-24">
+        <div class="max-w-3xl mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">Terms of Use</h1>
+            <p class="text-sm text-wa mb-12 font-medium">Last Updated: June 2026</p>
+
+            <div class="space-y-8 text-slate-400 leading-relaxed bg-white/5 border border-white/10 p-8 md:p-10 rounded-3xl backdrop-blur-sm">
+                
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">1. Acceptance of Terms</h2>
+                    <p>By downloading, installing, or using the WA Chat Pinner Chrome extension, you agree to comply with and be bound by these Terms of Use. If you do not agree to these terms, please do not use the extension.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">2. License to Use</h2>
+                    <p>We grant you a personal, non-exclusive, non-transferable, and revocable license to use WA Chat Pinner for personal or commercial purposes, strictly in accordance with these Terms.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">3. Disclaimer of Affiliation</h2>
+                    <p><strong>WA Chat Pinner is an independent project.</strong> It is not affiliated with, authorized, maintained, sponsored, endorsed by, or in any way officially connected with WhatsApp Inc., Meta Platforms Inc., or any of their affiliates or subsidiaries. "WhatsApp" is a registered trademark of WhatsApp Inc.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">4. "As Is" Provision & Reliability</h2>
+                    <p>The extension is provided on an "as is" and "as available" basis without any warranties of any kind. Because the extension relies on the DOM structure of WhatsApp Web, functionality may be temporarily disrupted if WhatsApp updates its web interface. We are not responsible for any loss of pinned chat configurations due to such updates or browser cache clears.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">5. Limitation of Liability</h2>
+                    <p>In no event shall the developers of WA Chat Pinner be liable for any direct, indirect, incidental, consequential, or punitive damages arising out of your use of or inability to use the extension.</p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/10 py-8 text-center bg-slate-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-slate-500">&copy; 2026 WA Chat Pinner. All rights reserved.</p>
+            <p class="mt-2 text-xs text-slate-600">Not affiliated with Meta or WhatsApp Inc.</p>
+        </div>
+    </footer>
+</body>
+</html>
